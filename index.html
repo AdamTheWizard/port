@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/afac56adce.js"></script>
+
+    <!--  JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 100vw;
+            grid-template-rows: 5vh 75vh 20vh;
+            background-color: #5480E1;
+        }
+
+        .image-div {
+            grid-column: 1;
+            grid-row: 2/2;
+            margin: 0 auto;
+
+
+        }
+
+        .img {
+            height: 75vw;
+        }
+
+        .name {
+            margin: 0;
+            grid-row: 3;
+            text-align: center;
+        }
+
+        .btn-div {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            cursor: pointer;
+            z-index: 998;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 2.5em;
+            height: .30em;
+            background-color: #333;
+            margin: 6px;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px);
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+
+        .menu-div {
+            position: fixed;
+            bottom: 100vh;
+            right: 100vw;
+            text-align: center;
+            z-index: 99;
+            height: 100vh;
+            width: 100vw;
+            background-color: white;
+            opacity: 1;
+        }
+
+        .menu-list {
+            list-style: none;
+            text-transform: uppercase;
+        }
+
+        .menu-title {
+            font-size: 3em;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            color: #444;
+        }
+
+        .hr {
+            text-align: center;
+            margin: 0 auto;
+            width: 75%;
+            border-top: double 3px black;
+        }
+
+        .menu-item {
+            margin: 1em;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: #555;
+        }
+
+        .menu-link:hover {
+            color: #000;
+        }
+
+        .img {
+            height: 70vh;
+            width: 30vw;
+            opacity: 0;
+        }
+
+        .social-icon-div {
+            margin-top: 3em;
+        }
+
+        .social-icon {
+            display: inline;
+            font-size: 1.5em;
+            margin: .5em;
+        }
+
+        .social-link {
+            text-decoration: none;
+            color: #555;
+        }
+
+        .social-link:hover {
+            color: #000;
+            text-shadow: 1px 1px 5px #999;
+        }
+
+        /* Tablet Size */
+
+        @media screen and (max-width: 768px) {
+
+            .img {
+                width: 70vw;
+            }
+
+        }
+
+
+        /* Phone Size */
+
+        @media screen and (max-width: 420px) {
+
+            .img {
+                width: 100vw;
+            }
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="menu-div">
+        <ul class="menu-list">
+            <li class="menu-title">Menu</li>
+            <hr class="hr">
+            <li class="menu-item"><a href="#" class="menu-link">Projects</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Skills</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+        </ul>
+        <div class="social-icon-div">
+            <ul class="icon-list">
+                <li class="social-icon">
+                    <a href="#" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-icon">
+                    <a href="#" class="social-link"><i class="fa fa-github-alt" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-icon">
+                    <a href="#" class="social-link"><i class="fa fa-link" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-icon">
+                    <a href="#" class="social-link"><i class="fa fa-wordpress" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-icon">
+                    <a href="#" class="social-link"><i class="fa fa-twitch" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+
+        <div class="btn-div" onClick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <div class="image-div">
+            <img class="img" src="drawingHipsterFusedColor.png">
+            <h1 class="name">Adam Stephen Wall</h1>
+            <h4 class="name">Artist and Developer</h4>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+
+        };
+
+        $(document).ready(function() {
+
+            $(".img").animate({
+                opacity: "1"
+            }, 2000);
+
+        });
+
+        $(".btn-div").click(function() {
+
+
+            if ($(".btn-div").css("z-index") == "998") {
+
+                $(".menu-div").animate({
+                    right: "0vw",
+                    bottom: "0vh",
+                    opacity: "1"
+                }, 500);
+
+                $(".btn-div").css({
+                    zIndex: "999"
+                });
+
+
+            } else if ($(".btn-div").css("z-index") == "999") {
+
+                $(".menu-div").animate({
+                    right: "100vw",
+                    bottom: "100vh",
+                    opacity: "0"
+                }, 500);
+
+                $(".btn-div").css({
+                    zIndex: "998"
+                });
+
+
+            }
+
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>
